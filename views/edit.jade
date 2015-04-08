@@ -1,0 +1,28 @@
+extends layout
+
+block content
+    div(class='container')
+        div(class='collapse navbar-collapse')
+        h2 Edit Business
+        form(method='post', action='/companys/edit/#{buisness._id}')
+            div(class='col-lg-8 col-lg offset-2')
+                div(class='row control-group')
+                    label Company:
+                    input(name='company', required, placeholder='Company Name', value='#{buisness.company}')
+                div(class='row control-group')
+                    label Description:
+                    input(name='description', required, value='#{buisness.description}')
+                div(class='row control-group')
+                    label Category:
+                    input(name='category', required, placeholder='Company Name', value='#{buisness.category}')
+                div(class='row control-group')
+                    label Address:
+                    input(name='address', required, placeholder='Address', value='#{buisness.address}')
+                div(class='row control-group')
+                    label Owner:
+                    input(name='owner', required, placeholder='Owner', value='#{buisness.owner}')
+                div(class='row control-group')
+                    label Phone Number:
+                    input(name='number', required, placeholder='Phone Number', value='#{buisness.number}')
+                input(type='hidden', name='id' value='#{buisness._id}')
+                input(type='submit', value='Update Business')

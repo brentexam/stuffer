@@ -1,0 +1,28 @@
+extends layout
+
+block content
+    div(class='container')
+        div(class='collapse navbar-collapse')
+        h2 Local Business Listings
+        table(class='table-bordered')
+            thead
+                th Company
+                th Description
+                th Category
+                th Address
+                th Owner
+                th Phone Number
+            tbody
+                each buisness, i in companys
+                    tr
+                        td 
+                            a(href='companys/indiv/#{buisness._id}' title='Company' class='company') #{buisness.company}
+                        td #{buisness.description}
+                        td #{buisness.category}
+                        td #{buisness.address}
+                        td #{buisness.owner}
+                        td #{buisness.number}
+                        td 
+                            a(href='companys/edit/#{buisness._id}' title='Edit') Edit
+                        td 
+                            a(href='companys/delete/#{buisness._id}' title='Delete' class='delete' onclick='return confirm(\'Delete this Company?\');') Delete

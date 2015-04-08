@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    div(class='container')
+        div(class='collapse navbar-collapse')
+        h2 Add a Business
+        form(method='post', action='/companys/add')
+            div(class='col-lg-8 col-lg offset-2')
+                div(class='row control-group')
+                    label Company:
+                    input(name='company', required, placeholder='Company name')
+                div(class='row control-group')
+                    label Description:
+                    textarea(name='description', required, placeholder='Description')
+                div(class='row control-group')
+                    label Category:
+                    input(name='category', required, placeholder='Category')
+                div(class='row control-group')
+                    label Address:
+                    input(name='address', required, placeholder='1 Example St.')
+                div(class='row control-group')
+                    label Owner:
+                    input(name='owner', placeholder='Owner')
+                div(class='row control-group')
+                    label Phone Number:
+                    input(name='number', required, placeholder='eg: 705-123-4567')
+                input(type='submit', value='Add Buisness')
